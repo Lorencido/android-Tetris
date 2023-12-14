@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#336699"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/game_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#336699"
+        android:text="SCORE: 0"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.tetris.views.GameWindow
+        android:id="@+id/game_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintHeight_percent="0.718"
+        app:layout_constraintTop_toBottomOf="@id/game_score"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/game_status"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="GAME OVER"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@id/game_container"
+        app:layout_constraintTop_toTopOf="@id/game_container"
+        app:layout_constraintEnd_toEndOf="@id/game_container"
+        app:layout_constraintBottom_toBottomOf="@id/game_container"/>
+
+    <Button
+        android:id="@+id/game_options_btn"
+        android:layout_width="120sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="5sp"
+        android:background="@drawable/game_turn_left_btn_bg"
+        android:text="Start"
+        android:textSize="12dp"
+        android:textColor="@color/text_color"
+        app:layout_constraintEnd_toEndOf="@id/game_container"
+        app:layout_constraintTop_toBottomOf="@id/game_container" />
+
+
+    <Button
+        android:id="@+id/game_leaderboard_btn"
+        android:layout_width="120sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/game_turn_left_btn_bg"
+        android:text="Leaderboard"
+        android:textColor="@color/text_color"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@id/game_container"
+        app:layout_constraintTop_toBottomOf="@+id/game_options_btn" />
+
+    <Button
+        android:id="@+id/up_btn"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/game_btn"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/game_container"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.68"/>
+    
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
